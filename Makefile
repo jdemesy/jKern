@@ -5,24 +5,29 @@
 ## Login   <demesy_j@epitech.net>
 ## 
 ## Started on  Tue Nov 27 15:52:59 2012 julien demesy
-## Last update Tue Nov 27 16:23:50 2012 julien demesy
+## Last update Wed Nov 28 14:14:50 2012 julien demesy
 ##
 
 NAME	=	jKern.bin
 
 CC	=	gcc
-CFLAGS	=	-m32 -march=i586 -Wall -Wextra -Werror\
-		-nostdlib -fno-builtin -nostartfiles -nodefaultlibs
+CFLAGS	=	-m32 -Wall -Wextra\
+		-nostdlib -fno-builtin -nostartfiles -nodefaultlibs\
+		-Iinclude
 
-LD	=	ld -m elf_i386
+LD	=	ld -melf_i386
 LD_FILE	=	linker.ld
 
 RM	=	rm -f
 
-CSRC	=	kernel.c
+SRCDIR	=	src
+
+CSRC	=	$(SRCDIR)/kernel.c\
+		$(SRCDIR)/print.c
+
 COBJ	=	$(CSRC:.c=.o)
 
-ASRC	=	loader.s
+ASRC	=	$(SRCDIR)/loader.s
 AOBJ	=	$(ASRC:.s=.o)
 
 $(NAME)	:	$(AOBJ) $(COBJ)
