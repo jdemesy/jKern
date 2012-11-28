@@ -5,17 +5,17 @@
 ## Login   <demesy_j@epitech.net>
 ## 
 ## Started on  Tue Nov 27 15:52:59 2012 julien demesy
-## Last update Wed Nov 28 14:14:50 2012 julien demesy
+## Last update Wed Nov 28 17:54:50 2012 julien demesy
 ##
 
 NAME	=	jKern.bin
 
 CC	=	gcc
-CFLAGS	=	-m32 -Wall -Wextra\
+CFLAGS	=	-m32 -Wall -Wextra -Werror\
 		-nostdlib -fno-builtin -nostartfiles -nodefaultlibs\
 		-Iinclude
 
-LD	=	ld -melf_i386
+LD	=	ld -melf_i386 -s
 LD_FILE	=	linker.ld
 
 RM	=	rm -f
